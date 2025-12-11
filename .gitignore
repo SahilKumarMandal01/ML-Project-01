@@ -1,0 +1,120 @@
+# -----------------------------
+# Python & Virtual Environments
+# -----------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# -----------------------------
+# Jupyter Notebooks
+# -----------------------------
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# -----------------------------
+# Data Files (Raw & Processed)
+# -----------------------------
+data/
+data_raw/
+data_processed/
+datasets/
+*.csv
+*.tsv
+*.json
+*.xlsx
+*.zip
+*.parquet
+*.h5
+*.hdf5
+*.bin
+
+
+# -----------------------------
+# Model Artifacts
+# -----------------------------
+models/
+model/
+checkpoints/
+*.pt
+*.pth
+*.h5
+*.pkl
+*.joblib
+*.onnx
+
+# -----------------------------
+# Logs & Output
+# -----------------------------
+logs/
+*.log
+*.out
+*.err
+tensorboard/
+runs/
+wandb/
+mlruns/
+
+# -----------------------------
+# Cache Files
+# -----------------------------
+.cache/
+__cache__/
+*.cache
+*.dat
+*.tmp
+
+# -----------------------------
+# IDE / Editor Settings
+# -----------------------------
+.vscode/
+.vscode/* 
+.idea/
+*.swp
+*.swo
+
+# -----------------------------
+# Build & Distribution
+# -----------------------------
+build/
+dist/
+*.egg
+*.egg-info/
+.eggs/
+
+# -----------------------------
+# Environment & Secrets
+# -----------------------------
+.env
+.env.*
+*.env
+credentials.json
+*.pem
+*.key
+*.token
+*.credentials
+
+# -----------------------------
+# Docker
+# -----------------------------
+docker/*/*.log
+docker/*.log
+
+# -----------------------------
+# OS Files
+# -----------------------------
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# Temporary experiment files
+# -----------------------------
+Rough/
+
