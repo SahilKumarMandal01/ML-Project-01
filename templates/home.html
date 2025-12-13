@@ -1,0 +1,112 @@
+{% extends "base.html" %}
+
+{% block title %}Predict | Math Score{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-lg-8">
+
+        <div class="card app-card shadow p-4">
+
+            <h2 class="text-center mb-4">Math Score Prediction</h2>
+
+            <form method="POST" action="{{ url_for('predict_datapoint') }}">
+
+                <!-- Demographic Information -->
+                <div class="form-section-title">Demographic Information</div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Gender</label>
+                        <select class="form-select" name="gender" required>
+                            <option disabled selected>Select</option>
+                            <option value="female">Female</option>
+                            <option value="male">Male</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Race / Ethnicity</label>
+                        <select class="form-select" name="ethnicity" required>
+                            <option disabled selected>Select</option>
+                            <option value="group A">Group A</option>
+                            <option value="group B">Group B</option>
+                            <option value="group C">Group C</option>
+                            <option value="group D">Group D</option>
+                            <option value="group E">Group E</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Family & Preparation -->
+                <div class="form-section-title">Family & Preparation</div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Parental Education</label>
+                        <select class="form-select" name="parental_level_of_education" required>
+                            <option disabled selected>Select</option>
+                            <option value="some high school">Some High School</option>
+                            <option value="high school">High School</option>
+                            <option value="some college">Some College</option>
+                            <option value="associate's degree">Associate's Degree</option>
+                            <option value="bachelor's degree">Bachelor's Degree</option>
+                            <option value="master's degree">Master's Degree</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Lunch Type</label>
+                        <select class="form-select" name="lunch" required>
+                            <option disabled selected>Select</option>
+                            <option value="standard">Standard</option>
+                            <option value="free/reduced">Free / Reduced</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label class="form-label">Test Preparation Course</label>
+                    <select class="form-select" name="test_preparation_course" required>
+                        <option disabled selected>Select</option>
+                        <option value="none">None</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+
+                <!-- Academic Scores -->
+                <div class="form-section-title">Academic Scores</div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Reading Score</label>
+                        <input type="number" class="form-control" name="reading_score" min="0" max="100" required>
+                    </div>
+
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Writing Score</label>
+                        <input type="number" class="form-control" name="writing_score" min="0" max="100" required>
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <div class="d-grid mt-4">
+                    <button type="submit" class="btn btn-success btn-lg">
+                        Predict Math Score
+                    </button>
+                </div>
+            </form>
+
+            <!-- Result -->
+            {% if results %}
+            <div class="alert alert-info text-center mt-4">
+                <div>Predicted Math Score</div>
+                <div class="result-box">{{ results }}</div>
+            </div>
+            {% endif %}
+
+        </div>
+
+    </div>
+</div>
+{% endblock %}
